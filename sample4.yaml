@@ -1,0 +1,25 @@
+app_id: 1234
+account: 
+  name: svc-bobcat-p
+  type: k8s
+  vault_namespace: foo
+  ssl_cert: true
+  k8s_clusters:
+  - services-1.ospr-k8s-p.vgis
+  - services-1.ospr-k8s-p.eqld
+  k8s_namespaces:
+  - bobcat
+group:
+- name: rgx-group-bobcat
+  type: ad 
+dns_a:
+- name: myservice.vgis.c3.zone
+  ip: 1.2.3.4
+- name: myservice.eqld.c3.zone
+  ip: 127.0.0.1
+dns_cname:
+- name: alias.c3.zone
+  canonical: myservice.vgis.c3.zone
+- name: anotheralias.c3.zone
+  canonical: myservice.eqld.c3.zone
+# test: failed
